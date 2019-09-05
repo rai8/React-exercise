@@ -1,12 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const Greeting = props => {
+  console.log(props);
+  return (
+    <div>
+      <p>
+        Hello {props.name}, your {props.age} years old
+      </p>
+    </div>
+  );
+};
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const App = () => {
+  const now = new Date();
+  const a = 10;
+  const b = 20;
+  return (
+    <div>
+      <h1>Hello world </h1>
+      <p>The time now is {now.toString()}</p>
+      <p>
+        The sum of {a} and {b} is {a + b}
+      </p>
+
+      <Greeting name="elsie" age="10" />
+      <Greeting name="brendah" age="16" />
+      <Greeting name="kinshanta" age="21" />
+    </div>
+  );
+};
+
+ReactDOM.render(<App />, document.getElementById("root"));
