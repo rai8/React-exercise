@@ -1,10 +1,16 @@
 import React from "react";
+import Header from "./components/Header";
+import Content from "./components/Content";
+import Total from "./components/Total";
 
 function App() {
+  const course = "Half stack application development";
   return (
-    <React.Fragment>
-      <h1>Hello world</h1>
-    </React.Fragment>
+    <div>
+      <Header course={course} />
+      <Content />
+      <Total />
+    </div>
   );
 }
 
